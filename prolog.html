@@ -4,34 +4,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laut Bercerita</title>
     <style>
-                @media (max-width: 768) {
-            body {
-                width: 100%;
-                
-            }
+        /* Mobile-first responsive styles */
+        :root{
+            --content-max-width: 900px;
+            --bg: #f5f2e9;
+            --text: #3a3a3a;
         }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { height: 100%; }
         body {
             font-family: Arial, sans-serif;
-            margin: 15;
-            background: #f5f2e9;
-            color: #3a3a3a;
-            margin: 90
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px 16px;
+            -webkit-font-smoothing:antialiased;
+        }
+        .container{
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 24px;
+            background: transparent;
         }
         h1 {
             text-align: center;
-            padding: 20;
+            padding: 20px 0;
+            margin: 0 0 12px 0;
+            font-size: calc(1.4rem + 0.8vw);
         }
         blockquote {
-            font-family: italic;
-            font-size: large;
+            font-style: italic;
+            font-size: 1.125rem;
+            margin: 0 0 12px 0;
+            padding-left: 12px;
+            border-left: 3px solid rgba(0,0,0,0.08);
         }
         p {
             line-height: 1.8;
+            margin: 0 0 1em 0;
+            font-size: 1rem;
+        }
+        ul { margin: 0 0 1em 1.2em; }
+        details { margin: 0.5em 0; }
+        summary { cursor: pointer; font-weight: 600; }
+
+        /* Larger screens */
+        @media (min-width: 769px) {
+            body { padding: 40px 20px; }
+            .container { padding: 32px; }
         }
 
+        /* Small phones */
+        @media (max-width: 420px) {
+            h1 { font-size: 1.6rem; }
+            body { padding: 14px 10px; }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
     <h1>Prolog</h1>
  <hr>
     <blockquote>
@@ -118,5 +149,6 @@
         </p>
     </details>
 
+</div>
 </body>
 </html>
